@@ -1,8 +1,9 @@
 """
 This program creates a tree in the middle of the screen.
 The first block creates the trunk.
-The second block creates the leaves in a triangle above the trunk.
+The second block creates the leaves in a pentagon above the trunk.
 The third block creates apples in random positions around the tree's leaves.
+The fourth block draws a branch on the right side of the tree.
 Author: Sam Jackson email:sjackso2@macalester.edu
 """
 
@@ -30,23 +31,36 @@ leaves = turtle.Turtle()
 leaves.speed(0)
 leaves.color("dark green")
 leaves.penup()
-leaves.goto(-120,0)
+leaves.goto(-75,0)
 leaves.pendown()
 leaves.begin_fill()
-for i in range(3):
-    leaves.forward(300)
-    leaves.left(120)
+for i in range(5):
+    leaves.forward(200)
+    leaves.left(72)
 leaves.end_fill()
 
 # This code creates apples on the tree
 apples = turtle.Turtle()
 apples.speed(0)
 apples.color("red")
-for i in range(6):
+for i in range(15):
     apples.penup()
-    apples.goto(random.randint(-100,100), random.randint(0,150))
+    apples.goto(random.randint(-100,100), random.randint(0,200))
     apples.pendown()
     apples.begin_fill()
     apples.circle(10)
     apples.end_fill()
+# This code creates a branch on the tree
+branch = turtle.Turtle()
+branch.speed(0)
+branch.color("brown")
+branch.penup()
+branch.goto(50,-100)
+branch.pendown()
+branch.begin_fill()
+branch.forward(100)
+branch.right(170)
+branch.forward(100)
+branch.end_fill()
+
 window.exitonclick()
