@@ -9,29 +9,30 @@ import turtle
 import math
 
 scr = turtle.Screen()
-turt = turtle.Turtel()
+# changed mispelled Turtel to correctly spell Turtle
+turt = turtle.Turtle()
 
 scr.bgcolor("seashell")
-
-tColors = ["light salmon", "light sky blue", "pale green", "liht coral", "pale turquoise", "plum"]
+# changed mispelled liht coral to correctly spell light coral
+tColors = ["light salmon", "light sky blue", "pale green", "light coral", "pale turquoise", "plum"]
 
 turt.width(5)
 numRings = 6
 
 for i in range(numRings):
-    turt.color(tColors[0])
+    # changed tColors[0] to tColors[i] to actually make it change color
+    turt.color(tColors[i])
     radius = 40 * (i + 1)
-
-    
     turt.up()
     turt.forward(radius)
     turt.down()
-    
     turt.left(90)
-    turt.circle(i)
-    turt.right(60)
-    
-    turt.up
+    # changed turt.circle(i) to turt.circle(radius) to make big enough circles
+    turt.circle(radius)
+    # changed the angle to fix the circle's position
+    turt.right(90)
+    # added parentheses to turt.up so that it would actually take the pen up
+    turt.up()
     turt.backward(radius)
     turt.down()
 
